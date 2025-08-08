@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import { GetApiData } from "../ApiServices"
+import { useFetchData } from "./Utils/useFetchData"
 
 
 
@@ -15,7 +16,7 @@ export default function ApiFetcher() {
            setApiData ({loading:false, error:null, data:result })
         })
         .catch((error)=>{
-            (error)
+            ({loading: false, error: error, data:null})
         })
 
     }, [])
@@ -26,10 +27,16 @@ export default function ApiFetcher() {
         )
     }
 
+    if (apiData.error) {
+        return (
+            <p>Error: {error.message}</p>
+        )
+    }
+
     return (
         <div>
             
-            {apiData.error && <p>Error: {apiData.error}</p>}
+           
             
         </div>
     )
