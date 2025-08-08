@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { getApiData } from "../ApiServices"
+import { GetApiData } from "../ApiServices"
 
 
 
@@ -10,10 +10,27 @@ export default function ApiFetcher() {
 
     useEffect(()=> {
         const fetchapiData = "https://www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata"
-        getApiData(fetchapiData)
+        GetApiData(fetchapiData)
         .then((result)=> {
            setApiData ({loading:false, error:null, data:result })
         })
+        .catch((error)=>{
+            (error)
+        })
 
     }, [])
+
+    if (apiData.loading) {
+        return(
+            <p>loading...</p>
+        )
+    }
+
+    return (
+        <div>
+            
+            {apiData.error && <p>Error: {apiData.error}</p>}
+            
+        </div>
+    )
 }
