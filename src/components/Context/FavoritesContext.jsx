@@ -1,14 +1,13 @@
-import { createContext, useState } from "lodash";
+import { createContext } from "react";
 import useLocalStorage from "../Utils/useLocalStorage";
 
-export const FavoritesContext = React.createContext({favorites: []}) 
-addFavorites,
-removeFavorites,
-existingFavorites
+export const FavoritesContext = createContext({favorites: [],
+}) 
 
 
-export default function FavoritesProvider() {
-    const [favorites, setFacorites]= useLocalStorage([])
+
+export const FavoritesProvider = ({children}) => {
+    const [favorites, setFavorites]= useLocalStorage([])
 
 addFavorites,
 removeFavorites,
@@ -16,6 +15,8 @@ existingFavorites
 
     function addFavorites() {
 
+        addFavorites
+        
     }
 
     function removeFavorites() {
@@ -29,7 +30,11 @@ existingFavorites
 return (
     <div>
         <h2>Favorite Recipe</h2>
+     <FavoritesContext.Provider>
+        {children}
+     </FavoritesContext.Provider>
     </div>
+   
 )
 
 }
