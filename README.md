@@ -1,6 +1,6 @@
 # Recipe Discovery App
 
-The Recipe Discovery App is an app users can use for recipes by category, search for dishes, view recipe information, and manage a list of favorite recipes. It uses an  API to fetch recipe data and usses React concepts like custom hooks, Context API and dynamic routing.
+The Recipe Discovery App is an app users can use for recipes by category, search for dishes, view recipe information, and manage a list of favorite recipes. It uses an  API to fetch recipe data and uses React concepts like custom hooks, Context API and dynamic routing.
 
 You should be able to find recipes by category. View recipe pages with ingredients and instructions and search recipes by name.
 
