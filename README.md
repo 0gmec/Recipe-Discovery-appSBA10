@@ -9,7 +9,7 @@ For the application to run locally you would cd into the code folder and then 'n
 ## Reflection
 The Most challenging part was implementing the FavoritesContext(which I am still having trouble with). I have to coordinate between global state management and localStorage while making sure UI updates were reactive to state changes. I also kept coding in Typescript which was causing syntax errors. 
 
-##Resources
+## Resources
 - https://medium.com/@64rohanmalo/fetch-and-display-data-from-an-api-with-react-228de56bb446
 - https://www.freecodecamp.org/news/react-context-api-explained-with-examples/
 - https://usehooks.com/uselocalstorage
