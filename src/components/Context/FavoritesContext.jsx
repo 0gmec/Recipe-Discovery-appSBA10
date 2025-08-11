@@ -1,21 +1,18 @@
 import { createContext } from "react";
 import useLocalStorage from "../Utils/useLocalStorage";
 
-export const FavoritesContext = createContext({favorites: [],
-}) 
-
-
+export const FavoritesContext = createContext()
 
 export const FavoritesProvider = ({children}) => {
-    const [favorites, setFavorites]= useLocalStorage([])
+    const [favorites, setFavorites]= useLocalStorage('favorites', [])
 
 addFavorites,
 removeFavorites,
 existingFavorites
 
-    function addFavorites() {
-
-        addFavorites
+    addFavorites=()=>  {
+        setFavorites(prev)
+       
         
     }
 

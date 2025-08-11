@@ -1,8 +1,7 @@
 
 import {useState} from 'react'
 
-
-export default function useLocalStorage(key, initialValue) {
+ function useLocalStorage(key, initialValue) {
 const [storedData, setStoredData] = useState(()=> {
     const item = localStorage.getItem(key)
     const data = item ? JSON.parse(item): initialValue
@@ -10,7 +9,10 @@ const [storedData, setStoredData] = useState(()=> {
 })
 const setData = (data) => {
     localStorage.setItem(key,JSON.stringify(data))
+    return setData
     
 }
 return [storedData, setStoredData]
 }
+
+export default useLocalStorage
