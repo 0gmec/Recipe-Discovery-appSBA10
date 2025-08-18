@@ -1,12 +1,17 @@
-# React + Vite
+# Recipe Discovery App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The Recipe Discovery App is an app users can use for recipes by category, search for dishes, view recipe information, and manage a list of favorite recipes. It uses an  API to fetch recipe data and uses React concepts like custom hooks, Context API and dynamic routing.
 
-Currently, two official plugins are available:
+You should be able to find recipes by category. View recipe pages with ingredients and instructions and search recipes by name.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+For the application to run locally you would cd into the code folder and then 'npm install' inside your terminal and then 'npm run dev'. That is where the localhost will appear for you to run the project locally.
 
-## Expanding the ESLint configuration
+## Reflection
+The Most challenging part was implementing the FavoritesContext(which I am still having trouble with). I have to coordinate between global state management and localStorage while making sure UI updates were reactive to state changes. I also kept coding in Typescript which was causing syntax errors. 
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Resources
+- https://medium.com/@64rohanmalo/fetch-and-display-data-from-an-api-with-react-228de56bb446
+- https://www.freecodecamp.org/news/react-context-api-explained-with-examples/
+- https://usehooks.com/uselocalstorage
+- https://react.dev/reference/react/Component#catching-rendering-errors-with-an-error-boundary
+- https://stackoverflow.com/questions/71430785/reactjs-how-to-pass-api-data-to-components/71431217

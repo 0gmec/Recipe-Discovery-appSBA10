@@ -5,18 +5,22 @@ export const FavoritesContext = createContext()
 
 export const FavoritesProvider = ({children}) => {
     const [favorites, setFavorites]= useLocalStorage('favorites', [])
+    const [recipeId, setRecipeId]= useState('')
 
 addFavorites,
 removeFavorites,
 existingFavorites
 
-    addFavorites=()=>  {
-        setFavorites(prev)
-       
+   const addFavorites=()=>  {
+    setFavorites([...favorites])
+    setRecipeId('')
+        
         
     }
 
-    function removeFavorites() {
+   const  removeFavorites=()=>{
+        const newFavorites = favorites.filter(({favorite})=> favorite !== favoriteToDelete)
+       setFavorites(newFavorites)
 
     }
 
@@ -26,10 +30,21 @@ existingFavorites
 
 return (
     <div>
-        <h2>Favorite Recipe</h2>
-     <FavoritesContext.Provider>
+        
+     <FavoritesContext.Provider value= {[favorites, setFavorites, recipeId, setRecipeId]}>
         {children}
      </FavoritesContext.Provider>
+     <ul>
+        {favorites.map((favorites, index) => ( 
+            <li key={index}>
+                <span>{favorites.text}</span>
+                <button onClick={removeFavorites}>Remove</button>
+
+            </li>
+        ))}
+     </ul>
+     <input type="text" value={recipeId} onChange={handleChange}/>
+     <button onClick={addFavorites}>Add</button>
     </div>
    
 )
