@@ -9,10 +9,10 @@ const [storedData, setStoredData] = useState(()=> {
 })
 const setData = (data) => {
     localStorage.setItem(key,JSON.stringify(data))
-    return setData
+    setStoredData(data)
     
 }
-return [storedData, setStoredData]
+return [storedData, setData]
 }
 
 export default useLocalStorage

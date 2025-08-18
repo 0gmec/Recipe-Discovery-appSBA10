@@ -12,11 +12,6 @@ const Category = () => <h4>Category</h4>
 const RecipeDetails = () => <h2>Recipe Details</h2>
 const Favorites = () => <h2>Favorites</h2>
 
-
-
-
-
-
 function App() {
   const { data, loading, error } = useFetchData("https://www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata")
 
@@ -48,10 +43,7 @@ function App() {
 
         <h2>Recipe Discovery App</h2>
 
-
-
         <ApiFetcher />
-
 
       </div>
 
